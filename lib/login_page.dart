@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:simple_login_flutter/main.dart';
+import 'package:simple_login_flutter/property.dart';
 import 'package:simple_login_flutter/state.dart';
 
 import 'dart:io';
@@ -45,7 +46,7 @@ class LoginPageState extends State<LoginPage> {
           title: Text("로그인"),
         ),
         body: Container(
-          margin: EdgeInsets.all(16.0),
+          margin: EdgeInsets.all(32.0),
           child: Column(children: [
             SizedBox(height: 12.0),
             SizedBox(height: 24.0),
@@ -68,7 +69,7 @@ class LoginPageState extends State<LoginPage> {
           obscureText: true,
           decoration: InputDecoration(labelText: 'password'),
         ),
-        SizedBox(height: 32.0),
+        SizedBox(height: 40.0),
         Visibility(
           child: Text(
             '아이디 또는 비밀번호를 확인해주세요',
@@ -77,13 +78,20 @@ class LoginPageState extends State<LoginPage> {
           visible: _labelErrorMessage,
         ),
         SizedBox(height: 8.0),
-        FlatButton(
-          minWidth: double.infinity,
-          color: Colors.green,
-          onPressed: () => _onLogin(context),
-          child: Text('Next',
-              style: TextStyle(color: Colors.white, fontSize: 16.0)),
-          padding: EdgeInsets.all(16.0),
+        SizedBox(
+          width: double.infinity,
+          child: RaisedButton(
+            color: tintColor,
+            onPressed: () => _onLogin(context),
+            child: Text('Next',
+                style: TextStyle(color: Colors.white, fontSize: 16.0)),
+            padding: EdgeInsets.all(16.0),
+            elevation: 10.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            splashColor: tintColor,
+          ),
         )
       ],
     );
