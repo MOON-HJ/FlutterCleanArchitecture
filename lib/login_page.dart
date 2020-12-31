@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import 'package:simple_login_flutter/main.dart';
 import 'package:simple_login_flutter/state.dart';
-import 'main_page.dart';
+
 import 'dart:io';
 
 class LoginPage extends StatefulWidget {
@@ -16,10 +17,10 @@ class LoginPageState extends State<LoginPage> {
 
   void _onLogin(BuildContext context) {
     final String email = _emailController.text;
-    final SimpleState state = Provider.of<SimpleState>(context);
+    final SimpleState state = Provider.of<SimpleState>(context, listen: false);
     state.setEmail(email);
 
-    Navigator.pushNamed(context, MAIN_PAGE);
+    Navigator.pushReplacementNamed(context, MAIN_PAGE);
   }
 
   void _onCancle() => exit(0);
