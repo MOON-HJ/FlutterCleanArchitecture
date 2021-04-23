@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simple_login_flutter/env/env.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -10,7 +11,9 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Text("hello World"),
+      body: Column(
+        children: [Text("hello World"), Text(Environment.baseUrl + "")],
+      ),
     );
   }
 }

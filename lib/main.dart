@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app/presentation/pages/main_page.dart';
 
-void main() => runApp(MyApp());
+// void main() => runApp(MyApp());
 
 const String ROOT_PAGE = '/';
 const String MAIN_PAGE = '/main';
@@ -29,4 +29,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
