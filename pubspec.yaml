@@ -32,6 +32,7 @@ dependencies:
   equatable: ^1.2.0
   get_it: ^3.1.0
   dartz: ^0.8.6
+  flutter_bloc: ^3.0.0
 
   #network
   data_connection_checker: ^0.3.4
