@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (context) => MainPage());
             break;
           default:
+            return MaterialPageRoute(builder: (context) => MainPage());
         }
       },
     );
