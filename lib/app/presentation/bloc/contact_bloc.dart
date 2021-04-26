@@ -28,6 +28,7 @@ class ContactBloc extends Bloc<ContactEvent, ContactState> {
 
   Stream<ContactState> _eitherLoadedOrErrorState(
       Either<Failure, List<Contact>> failureOrContacts) async* {
+    print(failureOrContacts);
     yield failureOrContacts.fold(
       (failure) => Error(message: _mapFailureToMessage(failure)),
       (contacts) => Loaded(items: contacts),

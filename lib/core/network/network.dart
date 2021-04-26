@@ -1,11 +1,14 @@
+import 'package:data_connection_checker/data_connection_checker.dart';
+
 abstract class Network {
   Future<bool> get hasConnection;
 }
 
 class NetworkImpl implements Network {
+  final DataConnectionChecker connectionChecker;
 
-  
+  NetworkImpl(this.connectionChecker);
+
   @override
-  Future<bool> get hasConnection => throw UnimplementedError();
-
+  Future<bool> get hasConnection => connectionChecker.hasConnection;
 }
